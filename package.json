@@ -23,6 +23,8 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@mdi/js": "^7.3.67",
+    "@mdi/react": "^1.6.1",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.1.0",
     "@types/node": "^20",

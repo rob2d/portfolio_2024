@@ -1,51 +1,67 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Unstable_Grid2';
-import Drawer from '@mui/material/Drawer';
-import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
+'use client';
+
+import { Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import HeaderSectionNavButtons from './components/HeaderSectionNavButtons';
+
+const Root = styled('div')(
+  ({ theme }) => `
+  & {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  & > .header-bar {
+    display: flex;
+    justify-content: space-between;
+    border-color: #f00;
+    border-width: 1px;
+    border-style: dashed;
+    padding: 0px ${theme.spacing(3)};
+
+    & > * {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  & > *:nth-of-type(2) {
+    border-color: #0f0;
+    border-width: 1px;
+    border-style: dashed;
+
+    flex-grow: 1;
+  }
+
+  ${theme.breakpoints.down('md')} {
+    & .md-hidden {
+      display: none;
+    }
+  }
+`
+);
 
 export default function HomePage() {
   return (
-    <Box sx={{ display: 'flex' }}>
-      <div>
-        <Alert severity='info' sx={{ mt: 2, mb: 5 }}>
-          <AlertTitle>Hello 👋</AlertTitle>
-          This app uses the Next.js App Router and Material UI v5.
-        </Alert>
-        <Grid container rowSpacing={3} columnSpacing={3}>
-          <Grid xs={6}>Random test</Grid>
-          <Grid xs={6}>Testing</Grid>
-          <Grid xs={6}>Testing</Grid>
-          <Grid xs={6}>Testing</Grid>
-        </Grid>
+    <Root>
+      <div className='header-bar'>
+        <HeaderSectionNavButtons />
+        <div>
+          <Typography variant='h6' aria-label='Robert Concepción III'>
+            R
+            <span className='md-hidden' aria-hidden={true}>
+              obert&nbsp;
+            </span>
+            C
+            <span className='md-hidden' aria-hidden={true}>
+              oncepción&nbsp;
+            </span>
+            III
+          </Typography>
+        </div>
       </div>
-      <Drawer
-        sx={{
-          width: 320,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: 320,
-            boxSizing: 'border-box',
-            top: ['48px', '56px', '64px'],
-            height: 'auto',
-            bottom: 0
-          }
-        }}
-        variant='permanent'
-        anchor='right'
-      >
-        <List sx={{ px: 2 }}>
-          <ListItem disablePadding>
-            <Typography variant='overline' sx={{ fontWeight: 500 }}>
-              On this page
-            </Typography>
-          </ListItem>
-        </List>
-      </Drawer>
-    </Box>
+      <div></div>
+    </Root>
   );
 }

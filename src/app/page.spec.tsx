@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react';
 import Home from './page';
 
 describe('Home', () => {
-  it('renders Next 14 boilerplate', async () => {
+  it('renders with name accessibly labeled', async () => {
     render(<Home />);
-    expect(screen.getByText('Hello 👋')).toBeInTheDocument();
+    expect(screen.getByLabelText('Robert Concepción III')).toBeInTheDocument();
   });
 });
