@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import HeaderSectionNavButtons from './HeaderSectionNavButtons';
-import { Sections } from '../constants/Sections';
+import { orderedSections } from '../constants/Sections';
 
 describe('HeaderSectionNavButtons', () => {
   it('renders expected section buttons', async () => {
     render(<HeaderSectionNavButtons />);
-    Sections.forEach((s) => {
+    orderedSections.forEach((s) => {
       expect(screen.getByText(s.name)).toBeInTheDocument();
     });
   });

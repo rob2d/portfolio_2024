@@ -5,7 +5,7 @@ import {
   mdiNote
 } from '@mdi/js';
 
-export const Sections = [
+export const orderedSections = [
   {
     name: 'About',
     nameUnabbrev: 'About',
@@ -21,13 +21,6 @@ export const Sections = [
     basePath: '/projects'
   },
   {
-    name: 'Misc',
-    nameUnabbrev: 'Miscellaneous',
-    iconPath: mdiDiceMultiple,
-    getTooltipText: () => 'Miscellaneous',
-    basePath: '/misc'
-  },
-  {
     name: 'CV',
     nameUnabbrev: 'CV',
     iconPath: mdiNote,
@@ -35,3 +28,7 @@ export const Sections = [
     basePath: '/cv'
   }
 ];
+
+export const sectionsByBasePath = Object.fromEntries(
+  orderedSections.map((section) => [section.basePath, section])
+);

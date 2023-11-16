@@ -7,6 +7,13 @@
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+:root main {
+  flex-grow: 1;
+  display: flex;
 }
 
 @media (prefers-color-scheme: dark) {
