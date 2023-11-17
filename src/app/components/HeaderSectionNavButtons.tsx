@@ -1,9 +1,9 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import Icon from '@mdi/react';
 import { Button, styled, Typography } from '@mui/material';
 import { orderedSections } from '../constants/Sections';
-import Icon from '@mdi/react';
+import Link from 'next/link';
 
 const Root = styled('div')(
   ({ theme }) => `
@@ -24,12 +24,10 @@ ${theme.breakpoints.down('md')} {
 );
 
 export default function HeaderSectionNavButtons() {
-  const router = useRouter();
-
   return (
     <Root>
       {orderedSections.map((s) => (
-        <Button key={s.name} onClick={() => router.push(s.basePath)}>
+        <Button key={s.name} href={s.basePath} component={Link}>
           <Typography variant='button'>{s.name}</Typography>
           <Icon path={s.iconPath} size={1.25} />
         </Button>

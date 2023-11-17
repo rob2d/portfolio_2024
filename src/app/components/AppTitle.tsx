@@ -2,22 +2,23 @@
 
 import { sectionsByBasePath } from '@/app/constants/Sections';
 
-const APP_NAME = `Rob's Portfolio`;
+export const APP_NAME = `Rob's Portfolio`;
 
 export function useMyAppTitle() {
-  let section = sectionsByBasePath[window.location.pathname];
+  let section = sectionsByBasePath[globalThis.location?.pathname];
 
   if (!section) {
-    const pathname = window.location.pathname.substring(
+    const pathname = globalThis.location?.pathname.substring(
       0,
-      window.location.pathname.lastIndexOf('/')
+      globalThis.location?.pathname.lastIndexOf('/')
     );
     section = sectionsByBasePath[pathname];
   }
   if (section) {
     return `${section.name} | ${APP_NAME}`;
   }
-  return `My App`;
+
+  return APP_NAME;
 }
 
 export default function AppTitle() {

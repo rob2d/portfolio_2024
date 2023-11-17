@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import Home from './page';
+import Layout from './layout';
 
-describe('Home', () => {
+describe('Page Layout', () => {
   it('renders with name accessibly labeled', async () => {
-    render(<Home />);
+    render(<Layout>hello-world</Layout>);
     expect(screen.getByLabelText('Robert Concepción III')).toBeInTheDocument();
   });
 });
