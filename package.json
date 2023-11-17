@@ -26,6 +26,7 @@
     "@mdi/js": "^7.3.67",
     "@mdi/react": "^1.6.1",
     "@react-pdf/renderer": "^3.1.14",
+    "@react-three/drei": "^9.88.16",
     "@react-three/fiber": "^8.15.11",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.1.0",

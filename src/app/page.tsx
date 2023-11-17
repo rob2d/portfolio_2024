@@ -1,5 +1,7 @@
 'use client';
 
+import SkillOrbsCanvas from './about/SkillOrbsCanvas';
+
 export default function HomePage() {
-  return <div>hello world</div>;
+  return <SkillOrbsCanvas />;
 }

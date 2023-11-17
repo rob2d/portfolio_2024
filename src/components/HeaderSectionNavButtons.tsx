@@ -2,7 +2,7 @@
 
 import Icon from '@mdi/react';
 import { Button, styled, Typography } from '@mui/material';
-import { orderedSections } from '../constants/Sections';
+import { orderedSections } from '../app/constants/Sections';
 import Link from 'next/link';
 
 const Root = styled('div')(

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import HeaderSectionNavButtons from './HeaderSectionNavButtons';
-import { orderedSections } from '../constants/Sections';
+import { orderedSections } from '../app/constants/Sections';
 
 describe('HeaderSectionNavButtons', () => {
   it('renders expected section buttons', async () => {
